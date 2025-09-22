@@ -1,15 +1,15 @@
-import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from '../views/Home';
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView
-    }
-  ]
-})
+const AppRouter = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {}
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
-export default router
+export default AppRouter;

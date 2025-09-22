@@ -4,8 +4,7 @@ import otr_03 from "../assets/img/otr_03.jpeg";
 import otr_04 from "../assets/img/otr_04.jpeg";
 import otr_05 from "../assets/img/otr_05.jpeg";
 
-import { Github, Send } from 'lucide-vue-next';
-
+import { Github, Send } from 'lucide-react';
 
 export const headerNav = [
     {
@@ -51,7 +50,7 @@ export const mindsetText = [
 
 export const workText = [
     {
-        title: "Vueを利用したサイト作り",
+        title: "VUEを利用したサイト作り",
         code: "https://github.com/Eno951024/vue",
         view: "https://sonhyon-ho-vue.netlify.app/",
     },

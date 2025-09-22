@@ -1,65 +1,3 @@
-<script setup>
-import { onMounted } from 'vue';
-import { otrText } from "../constants";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
-onMounted(() => {
-    ScrollTrigger.matchMedia({
-    
-        "(min-width: 801px)": function() {
-            const horSection = gsap.utils.toArray(".otr_item");
-
-            const scrollAmountPerItem = 300;
-
-            const totalScroll = horSection.length * scrollAmountPerItem;
-
-            gsap.to(horSection, {
-                xPercent: -120 * (horSection.length - 1),
-                ease: "none",
-                scrollTrigger: {
-                    trigger: "#otr",
-                    start: "top 56px",
-                    end: `+=${totalScroll}`, 
-                    pin: true,
-                    scrub: 1,
-                    invalidateOnRefresh: true,
-                    anticipatePin: 1,
-                },
-            });
-            return () => {};
-        },
-
-        "(max-width: 800px)": function() {
-            return () => {};
-        },
-    });
-});
-</script>
-
-<template>
-    <section id="otr">
-        <div class="otr_inner">
-            <h2 class="otr_title">
-                Off the Record
-            </h2>
-            <div class="otr_wrap">
-                <article class="otr_item" v-for="(otr, key) in otrText" :key="key">
-                    <span class="num">{{ key + 1 }}.</span>
-                    <div class="img">
-                        <img :src="otr.img"/>
-                    </div>
-                    <h3 class="title">{{ otr.title }}</h3>
-                    <p class="desc">{{ otr.desc }}</p>
-                </article>
-            </div>
-        </div>
-    </section>
-</template>
-
-<style lang="scss">
 #otr {
     width: 100%;
     margin-top: 10vh;
@@ -167,4 +105,3 @@ onMounted(() => {
         }
     }
 }
-</style>

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // セッティング
-@use "fonts";
-@use "vars";
-@use "reset";
-@use "mixin";
+@use "_page/_common/fonts";
+@use "_page/_common/vars";
+@use "_page/_common/reset";
+@use "_page/_common/mixin";
